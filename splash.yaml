@@ -12,6 +12,8 @@ flutter_native_splash:
 
   web: false
 
+
+
   # to run write  flutter pub run flutter_native_splash:create --path=splash.yaml
   # to remove write  flutter pub run flutter_native_splash:remove
 

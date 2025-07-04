@@ -40,7 +40,7 @@ class NavigationMenu extends StatelessWidget {
 class NavigationController extends GetxController{
   final Rx<int> selectedIndex=0.obs;
 
-  //add screesn in the list
+  //TODO: Add screens in this
   final screens=[HomeScreen(),Container(color: Colors.purple,),Container(color: Colors.orange,),Container(color: Colors.blue,)];
 
 }
