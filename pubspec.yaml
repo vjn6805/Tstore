@@ -43,11 +43,16 @@ flutter:
 
 
   assets:
-    - assets/icons/
-    - assets/images/
     - assets/logos/
-    - assets/images/on_boarding_images/
+    - assets/icons/brands/
+    - assets/images/content/
+    - assets/images/banners/
+    - assets/images/reviews/
+    - assets/images/products/
+    - assets/icons/categories/
     - assets/images/animations/
+    - assets/icons/payment_methods/
+    - assets/images/on_boarding_images/
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
 

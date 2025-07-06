@@ -1,8 +1,10 @@
 import 'package:catlog/common/widgets/appbar/appbar.dart';
 import 'package:catlog/common/widgets/custom_shapes/curved_shapes/curved_edges.dart';
 import 'package:catlog/features/shop/screens/home/widgets/home_appbar.dart';
+import 'package:catlog/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:catlog/utils/constants/colors.dart';
 import 'package:catlog/utils/constants/enums.dart';
+import 'package:catlog/utils/constants/image_string.dart';
 import 'package:catlog/utils/constants/sizes.dart';
 import 'package:catlog/utils/constants/text_strings.dart';
 import 'package:catlog/utils/device/device_utilities.dart';
@@ -14,7 +16,9 @@ import '../../../../common/widgets/custom_shapes/containers/circular_container.d
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../common/widgets/custom_shapes/curved_shapes/curved_edge_widget.dart';
+import '../../../../common/widgets/image_text_widgets/vertical_image_text.dart';
 import '../../../../common/widgets/product_cart/cart_menu_icon.dart';
+import '../../../../common/widgets/text/section_heading.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -31,15 +35,40 @@ class HomeScreen extends StatelessWidget {
                   /// ---Appbar custom (name and cart icon)---
                   THomeAppBar(),
 
-                  const SizedBox(height: TSizes.spaceBtwSections,),
+                  const SizedBox(
+                    height: TSizes.spaceBtwSections,
+                  ),
 
-                  ///Searchbar
-                  TSearchContainer(text: "Search in Store", icon: Icons.search, showBackground: true, showBorder: true),
+                  ///---Searchbar----
+                  TSearchContainer(
+                      text: "Search in Store",
+                      icon: Icons.search,
+                      showBackground: true,
+                      showBorder: true,
+                    onTap: (){},//todo:implement this for search function
+                  ),
 
-                  const SizedBox(height: TSizes.spaceBtwSections,),
+                  const SizedBox(
+                    height: TSizes.spaceBtwSections,
+                  ),
 
                   ///Categories section
-
+                  Padding(
+                    padding: EdgeInsets.only(left: TSizes.defaultSpace),
+                    child: Column(
+                      children: [
+                        TSectionHeading(
+                          title: "Popular Categories",
+                          showActionButton: false,
+                          color: TCOlors.white,
+                        ),
+                        SizedBox(
+                          height: TSizes.spaceBtwItems,
+                        ),
+                        THomeCategories()
+                      ],
+                    ),
+                  )
                 ],
               ),
             ),
@@ -49,9 +78,5 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-
-
-
 
 
