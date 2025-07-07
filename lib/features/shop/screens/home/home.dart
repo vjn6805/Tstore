@@ -1,7 +1,9 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:catlog/common/widgets/appbar/appbar.dart';
 import 'package:catlog/common/widgets/custom_shapes/curved_shapes/curved_edges.dart';
 import 'package:catlog/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:catlog/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:catlog/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:catlog/utils/constants/colors.dart';
 import 'package:catlog/utils/constants/enums.dart';
 import 'package:catlog/utils/constants/image_string.dart';
@@ -16,6 +18,7 @@ import '../../../../common/widgets/custom_shapes/containers/circular_container.d
 import '../../../../common/widgets/custom_shapes/containers/primary_header_container.dart';
 import '../../../../common/widgets/custom_shapes/containers/search_container.dart';
 import '../../../../common/widgets/custom_shapes/curved_shapes/curved_edge_widget.dart';
+import '../../../../common/widgets/image/t_round_image.dart';
 import '../../../../common/widgets/image_text_widgets/vertical_image_text.dart';
 import '../../../../common/widgets/product_cart/cart_menu_icon.dart';
 import '../../../../common/widgets/text/section_heading.dart';
@@ -29,6 +32,7 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
+            ///Header section
             TPrimaryHeaderContainer(
               child: Column(
                 children: [
@@ -41,11 +45,11 @@ class HomeScreen extends StatelessWidget {
 
                   ///---Searchbar----
                   TSearchContainer(
-                      text: "Search in Store",
-                      icon: Icons.search,
-                      showBackground: true,
-                      showBorder: true,
-                    onTap: (){},//todo:implement this for search function
+                    text: "Search in Store",
+                    icon: Icons.search,
+                    showBackground: true,
+                    showBorder: true,
+                    onTap: () {}, //todo:implement this for search function
                   ),
 
                   const SizedBox(
@@ -68,10 +72,17 @@ class HomeScreen extends StatelessWidget {
                         THomeCategories()
                       ],
                     ),
-                  )
+                  ),
                 ],
               ),
             ),
+
+            ///Body
+            ///Image Slider
+            Padding(
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              child: TPromoSlider(banner: [TImages.banner1,TImages.banner2,TImages.banner3],),
+            )
           ],
         ),
       ),
