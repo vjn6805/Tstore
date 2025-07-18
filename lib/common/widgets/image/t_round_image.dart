@@ -13,7 +13,7 @@ class TRoundedImage extends StatelessWidget {
     this.border,
     this.backgroundColor=TCOlors.light,
     this.fit=BoxFit.contain,
-    this.padding,
+    this.padding=const EdgeInsets.symmetric(horizontal: 3),
     this.isNetworkImage=false,
     this.onPressed,
     this.borderRadius=TSizes.md,

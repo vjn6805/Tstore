@@ -19,7 +19,7 @@ class TGridLayout extends StatelessWidget {
     return GridView.builder(
       itemCount: itemCount,
       shrinkWrap: true,
-      //padding:EdgeInsects.zero
+      padding:EdgeInsets.zero,
       physics: NeverScrollableScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,

@@ -51,7 +51,7 @@ class TProductCardVertical extends StatelessWidget {
                       padding: EdgeInsets.symmetric(
                           horizontal: TSizes.sm, vertical: TSizes.xs),
                       child: Text(
-                        "25",
+                        "25 %",
                         style: Theme.of(context)
                             .textTheme
                             .labelLarge!
