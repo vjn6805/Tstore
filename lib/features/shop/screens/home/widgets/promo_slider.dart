@@ -25,6 +25,8 @@ class TPromoSlider extends StatelessWidget {
         CarouselSlider(
           items: banner.map((url)=>TRoundedImage(imageUrl:url)).toList(),
           options: CarouselOptions(
+            padEnds: true,
+            autoPlay: true,
             viewportFraction: 1,
             onPageChanged: (index,_)=>controller.updatePageIndicator(index)
           ),

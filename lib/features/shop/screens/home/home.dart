@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:catlog/common/widgets/appbar/appbar.dart';
 import 'package:catlog/common/widgets/custom_shapes/curved_shapes/curved_edges.dart';
+import 'package:catlog/common/widgets/product/product_cart/produxt_cart_vertical.dart';
 import 'package:catlog/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:catlog/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:catlog/features/shop/screens/home/widgets/promo_slider.dart';
@@ -20,7 +21,8 @@ import '../../../../common/widgets/custom_shapes/containers/search_container.dar
 import '../../../../common/widgets/custom_shapes/curved_shapes/curved_edge_widget.dart';
 import '../../../../common/widgets/image/t_round_image.dart';
 import '../../../../common/widgets/image_text_widgets/vertical_image_text.dart';
-import '../../../../common/widgets/product_cart/cart_menu_icon.dart';
+import '../../../../common/widgets/layouts/grid_layout.dart';
+import '../../../../common/widgets/product/cart/cart_menu_icon.dart';
 import '../../../../common/widgets/text/section_heading.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -81,7 +83,17 @@ class HomeScreen extends StatelessWidget {
             ///Image Slider
             Padding(
               padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: TPromoSlider(banner: [TImages.banner1,TImages.banner2,TImages.banner3],),
+              child: Column(
+                children: [
+                  TPromoSlider(
+                    banner: [TImages.banner1, TImages.banner2, TImages.banner3],
+                  ),
+                  SizedBox(
+                    height: TSizes.spaceBtwSections,
+                  ),
+                  TGridLayout(itemCount: 4, itemBuilder: (_ , index ) => TProductCardVertical(),),
+                ],
+              ),
             )
           ],
         ),

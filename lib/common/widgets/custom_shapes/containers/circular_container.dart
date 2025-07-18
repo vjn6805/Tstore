@@ -31,7 +31,7 @@ class TCircularContainer extends StatelessWidget {
       padding: EdgeInsets.all(padding),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(raduis),
-          color: TCOlors.textWhite.withOpacity(0.1)),
+          color: TCOlors.black.withOpacity(0.1)),
       child: child,
     );
   }
