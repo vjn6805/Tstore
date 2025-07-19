@@ -7,11 +7,7 @@ import '../../../../../utils/helpers/helper_functions.dart';
 class TLoginHeader extends StatelessWidget {
    TLoginHeader({
     super.key,
-
   });
-
-
-
   @override
   Widget build(BuildContext context) {
     final dark= THelperFunctions.isDarkMode(context);

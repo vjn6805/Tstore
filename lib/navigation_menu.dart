@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
+import 'features/shop/screens/store/store.dart';
+
 class NavigationMenu extends StatelessWidget {
   const NavigationMenu({super.key});
 
@@ -41,6 +43,6 @@ class NavigationController extends GetxController{
   final Rx<int> selectedIndex=0.obs;
 
   //TODO: Add screens in this
-  final screens=[HomeScreen(),Container(color: Colors.purple,),Container(color: Colors.orange,),Container(color: Colors.blue,)];
+  final screens=[HomeScreen(),StoreScreen(),Container(color: Colors.orange,),Container(color: Colors.blue,)];
 
 }

@@ -5,6 +5,7 @@ import 'package:catlog/common/widgets/custom_shapes/containers/rounded_container
 import 'package:catlog/common/widgets/image/t_round_image.dart';
 import 'package:catlog/common/widgets/text/product_title_text.dart';
 import 'package:catlog/utils/constants/colors.dart';
+import 'package:catlog/utils/constants/enums.dart';
 import 'package:catlog/utils/constants/image_string.dart';
 import 'package:catlog/utils/constants/sizes.dart';
 import 'package:catlog/utils/helpers/helper_functions.dart';
@@ -85,51 +86,36 @@ class TProductCardVertical extends StatelessWidget {
                   SizedBox(
                     height: TSizes.spaceBtwItems / 2,
                   ),
-                  Row(
-                    children: [
-                      Text(
-                        'Nike',
-                        overflow: TextOverflow.ellipsis,
-                        maxLines: 1,
-                        style: Theme.of(context).textTheme.labelMedium,
-                      ),
-                      SizedBox(
-                        height: TSizes.xs,
-                      ),
-                      Icon(
-                        Iconsax.verify,
-                        color: TCOlors.primary,
-                        size: TSizes.iconXs,
-                      )
-                    ],
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      TProductPrice(price: '2500'),
-                      Container(
-                        decoration: BoxDecoration(
-                            color: TCOlors.dark,
-                            borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(TSizes.cardRadiusMd),
-                              bottomRight:
-                                  Radius.circular(TSizes.productImageRadius),
-                            )),
-                        child: SizedBox(
-                            width: TSizes.iconLg * 1.2,
-                            height: TSizes.iconLg * 1.2,
-                            child: Center(
-                              child: Icon(
-                                Iconsax.add,
-                                color: TCOlors.white,
-                              ),
-                            )),
-                      )
-                    ],
-                  )
+                  TBrandTitleWithVerifiedIcon(),
                 ],
               ),
             ),
+            Spacer(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Padding(
+                    padding: EdgeInsets.only(left: TSizes.sm),
+                    child: TProductPrice(price: '2500')),
+                Container(
+                  decoration: BoxDecoration(
+                      color: TCOlors.dark,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(TSizes.cardRadiusMd),
+                        bottomRight: Radius.circular(TSizes.productImageRadius),
+                      )),
+                  child: SizedBox(
+                      width: TSizes.iconLg * 1.2,
+                      height: TSizes.iconLg * 1.2,
+                      child: Center(
+                        child: Icon(
+                          Iconsax.add,
+                          color: TCOlors.white,
+                        ),
+                      )),
+                )
+              ],
+            )
           ],
         ),
       ),
@@ -137,4 +123,42 @@ class TProductCardVertical extends StatelessWidget {
   }
 }
 
+class TBrandTitleWithVerifiedIcon extends StatelessWidget {
+  const TBrandTitleWithVerifiedIcon({
+    super.key,
+    required this.title,
+     this.maxLines=1,
+    this.textColor,
+    this.iconColor=TCOlors.primary,
+    this.textAlign=TextAlign.center,
+     this.brandTextSizes=TextSizes.small,
+  });
 
+  final String title;
+  final int maxLines;
+  final Color? textColor, iconColor;
+  final TextAlign? textAlign;
+  final TextSizes brandTextSizes;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Text(
+          title,
+          overflow: TextOverflow.ellipsis,
+          maxLines: 1,
+          style: Theme.of(context).textTheme.labelMedium,
+        ),
+        SizedBox(
+          height: TSizes.xs,
+        ),
+        Icon(
+          Iconsax.verify,
+          color: TCOlors.primary,
+          size: TSizes.iconXs,
+        )
+      ],
+    );
+  }
+}
