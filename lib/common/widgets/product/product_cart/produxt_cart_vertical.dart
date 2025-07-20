@@ -14,6 +14,7 @@ import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../icons/t_circular_icon.dart';
 import '../../text/product_price_text.dart';
+import '../../text/t_brand_title_text_with_verified_cion.dart';
 
 class TProductCardVertical extends StatelessWidget {
   const TProductCardVertical({super.key});
@@ -86,7 +87,7 @@ class TProductCardVertical extends StatelessWidget {
                   SizedBox(
                     height: TSizes.spaceBtwItems / 2,
                   ),
-                  TBrandTitleWithVerifiedIcon(),
+                  TBrandTitleWithVerifiedIcon(title: "Nike",),
                 ],
               ),
             ),
@@ -123,42 +124,6 @@ class TProductCardVertical extends StatelessWidget {
   }
 }
 
-class TBrandTitleWithVerifiedIcon extends StatelessWidget {
-  const TBrandTitleWithVerifiedIcon({
-    super.key,
-    required this.title,
-     this.maxLines=1,
-    this.textColor,
-    this.iconColor=TCOlors.primary,
-    this.textAlign=TextAlign.center,
-     this.brandTextSizes=TextSizes.small,
-  });
 
-  final String title;
-  final int maxLines;
-  final Color? textColor, iconColor;
-  final TextAlign? textAlign;
-  final TextSizes brandTextSizes;
 
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Text(
-          title,
-          overflow: TextOverflow.ellipsis,
-          maxLines: 1,
-          style: Theme.of(context).textTheme.labelMedium,
-        ),
-        SizedBox(
-          height: TSizes.xs,
-        ),
-        Icon(
-          Iconsax.verify,
-          color: TCOlors.primary,
-          size: TSizes.iconXs,
-        )
-      ],
-    );
-  }
-}
+
