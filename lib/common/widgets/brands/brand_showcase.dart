@@ -42,7 +42,7 @@ class TBrandShowcase extends StatelessWidget {
   Widget brandProductImageWidget(String image, context) {
     return Expanded(
       child: TRoundedContainer(
-        height: 100,
+        height: 110,
         backgroundColor: THelperFunctions.isDarkMode(context)
             ? TCOlors.darkerGrey
             : TCOlors.light,
