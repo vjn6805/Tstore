@@ -6,11 +6,16 @@ import '../../../utils/helpers/helper_functions.dart';
 
 class TVerticalImageText extends StatelessWidget {
   const TVerticalImageText({
-    super.key, this.onTap, required this.title, required this.image, this.textColor=TCOlors.white, this.backgroundColor=TCOlors.white,
+    super.key,
+    this.onTap,
+    required this.title,
+    required this.image,
+    this.textColor = TCOlors.white,
+    this.backgroundColor,
   });
 
   final void Function()? onTap;
-  final String title,image;
+  final String title, image;
   final Color textColor;
   final Color? backgroundColor;
 
@@ -27,14 +32,18 @@ class TVerticalImageText extends StatelessWidget {
               height: 56,
               padding: EdgeInsets.all(TSizes.sm),
               decoration: BoxDecoration(
-                  color: backgroundColor??(THelperFunctions.isDarkMode(context)?TCOlors.black:TCOlors.white),
-                  borderRadius:
-                  BorderRadius.circular(100)),
+                  color: backgroundColor ??
+                      (THelperFunctions.isDarkMode(context)
+                          ? TCOlors.black
+                          : TCOlors.white),
+                  borderRadius: BorderRadius.circular(100)),
               child: Center(
                 child: Image(
                   image: AssetImage(image),
                   fit: BoxFit.cover,
-                  color: THelperFunctions.isDarkMode(context)?TCOlors.white:TCOlors.dark,
+                  color: THelperFunctions.isDarkMode(context)
+                      ? TCOlors.white
+                      : TCOlors.dark,
                 ),
               ),
             ),

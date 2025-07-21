@@ -61,6 +61,7 @@ class TProductCardVertical extends StatelessWidget {
                       ),
                     ),
                   ),
+
                   Positioned(
                       top: 0,
                       right: 0,
