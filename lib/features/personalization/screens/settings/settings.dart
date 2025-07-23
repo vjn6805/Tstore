@@ -3,9 +3,12 @@ import 'package:catlog/common/widgets/custom_shapes/containers/primary_header_co
 import 'package:catlog/common/widgets/image/t_circular_image.dart';
 import 'package:catlog/common/widgets/list_tiles/setting_menu_file.dart';
 import 'package:catlog/common/widgets/text/section_heading.dart';
+import 'package:catlog/features/personalization/screens/profile/profile.dart';
 import 'package:catlog/utils/constants/sizes.dart';
 import 'package:catlog/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax_flutter/iconsax_flutter.dart';
 
 import '../../../../common/widgets/list_tiles/user_profile_tile.dart';
@@ -33,7 +36,7 @@ class SettingsScreen extends StatelessWidget {
                           .apply(color: TCOlors.white),
                     ),
                   ),
-                  TUserProfileTile(),
+                  TUserProfileTile(onTap: ()=>Get.to(()=>ProfileScreen()),),
                   SizedBox(
                     height: TSizes.spaceBtwSections,
                   ),

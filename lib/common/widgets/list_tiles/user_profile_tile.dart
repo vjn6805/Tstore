@@ -8,8 +8,10 @@ import '../image/t_circular_image.dart';
 
 class TUserProfileTile extends StatelessWidget {
   const TUserProfileTile({
-    super.key,
+    super.key, this.onTap,
   });
+
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +25,7 @@ class TUserProfileTile extends StatelessWidget {
       ),
       title: Text("Veer Jain",style: Theme.of(context).textTheme.headlineSmall!.apply(color: TCOlors.white),),
       subtitle:Text("veer47003@gmail.com",style: Theme.of(context).textTheme.bodyMedium!.apply(color: TCOlors.white),),
-      trailing: IconButton(onPressed: (){}, icon: Icon(Iconsax.edit,color: TCOlors.white,)),
+      trailing: IconButton(onPressed: onTap, icon: Icon(Iconsax.edit,color: TCOlors.white,)),
     );
   }
 }
